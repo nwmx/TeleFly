@@ -1,0 +1,32 @@
+{
+  "name": "telefly",
+  "version": "1.0.0",
+  "description": "ein intelligenter Chatbot für Flugsportvereine mit vereinsflieger.de ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwmx/TeleFly.git"
+  },
+  "keywords": [
+    "flugsport",
+    "telegram",
+    "vereinsflieger"
+  ],
+  "author": "Nico Wichmann",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nwmx/TeleFly/issues"
+  },
+  "homepage": "https://github.com/nwmx/TeleFly#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "colors": "^1.4.0",
+    "fs": "0.0.1-security",
+    "md5": "^2.2.1",
+    "node-schedule": "^1.3.2",
+    "telegraf": "^3.38.0"
+  }
+}

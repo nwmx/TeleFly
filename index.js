@@ -61,7 +61,7 @@ bot.help((ctx) => {
 })
 
 bot.command('credits', (ctx) => {
-    ctx.replyWithMarkdown('*TeleFly*\nDer intelligente Chatbot für Flugsportvereine mit vereisnflieger.de\n\nCopyright © 2020 - present, Nico Wichmann.\n\n*Autor:* Nico Wichmann\n*GitHub:* github.com/nwmx\n\nLizensiert unter der GNU General Public License v3.0 (Open Source)\n\n*Abhängigkeiten:*\n\n*telegraf* - Copyright © 2016 - 2019, Vitaly Domnikov.\n*axios* - Copyright © 2014 - present, Matt Zabriskie.\n*colors* - Copyright © Marak Squires, Sindre Sorhus.\n*md5* - Copyright © 2011-2012, Paul Vorbach. Copyright © 2009, Jeff Mott.\n*node-schedule* - Copyright © 2015, Matt Patenaude.')
+    ctx.replyWithMarkdown('*TeleFly*\nDer intelligente Chatbot für Flugsportvereine mit vereinsflieger.de\n\nCopyright © 2020 - present, Nico Wichmann.\n\n*Autor:* Nico Wichmann\n*GitHub:* github.com/nwmx\n\nLizensiert unter der GNU General Public License v3.0 (Open Source)\n\n*Abhängigkeiten:*\n\n*telegraf* - Copyright © 2016 - 2019, Vitaly Domnikov.\n*axios* - Copyright © 2014 - present, Matt Zabriskie.\n*colors* - Copyright © Marak Squires, Sindre Sorhus.\n*md5* - Copyright © 2011-2012, Paul Vorbach. Copyright © 2009, Jeff Mott.\n*node-schedule* - Copyright © 2015, Matt Patenaude.')
 })
 
 bot.command('version', (ctx) => {
@@ -318,7 +318,7 @@ function userList() {
         let usrlist = [];
         for (let index = 0; index < Object.keys(res.data).length - 1; index++) {
             if (res.data[index].prop1.value) {
-                usrlist.push({ "firstname": `${res.data[index].firstname}`, "lastname": `${res.data[index].lastname}`, "uid": `${res.data[index].uid}`, "email": `${res.data[index].email}`, "telegram": `${res.data[index].prop1.value}` })
+                usrlist.push({ "firstname": `${res.data[index].firstname}`, "lastname": `${res.data[index].lastname}`, "uid": `${res.data[index].uid}`, "telegram": `${res.data[index].prop1.value}` })
             }
         }
         fs.writeFileSync('userlist.json', JSON.stringify(usrlist)); //write userlist to userlist.json

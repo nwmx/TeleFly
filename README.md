@@ -155,6 +155,7 @@ Die Konfiguration sieht folgendermaßen aus:
     "verein": "XXXX"
 ### "telegram" - Mit dem Botfather chatten
 ![Der Telegram-Botfather](https://core.telegram.org/file/811140763/1/PihKNbjT8UE/03b57814e13713da37)
+
 In das Konfigurationsfeld **"telegram"** kommt der sogenannte API-Token für den Telegram-Bot, den wir nun folgendermaßen erstellen:
 - **Wichtig!** Führe alle folgenden Schritte von dem Telegram-Konto aus durch, dass später auch als Adminkonto für den Bot sein soll (Benutzerverwaltung, Push-Nachrichten an alle Nutzer, manuelles verschicken der Flugbucheinträge usw.).
 - Öffne die Telegram-App auf einem beliebigen Gerät (PC, Tablet, Smartphone), tippe auf die **kleine Lupe** und suche nach _@botfather_. Tippt auf das Konto mit dem kleinen Bot-Symbol vor dem Namen.
@@ -296,7 +297,11 @@ Lizensiert unter der GNU General Public License v3.0 (Open Source)
 **Abhängigkeiten:**
 
 **telegraf** - Copyright © 2016 - 2019, Vitaly Domnikov.
+
 **axios** - Copyright © 2014 - present, Matt Zabriskie.
+
 **colors** - Copyright © Marak Squires, Sindre Sorhus.
+
 **md5** - Copyright © 2011-2012, Paul Vorbach. Copyright © 2009, Jeff Mott.
+
 **node-schedule** - Copyright © 2015, Matt Patenaude.

@@ -40,7 +40,7 @@ Zeige die Hilfe / Befehlsübersicht
 Sende dem Administrator dein Namen sowie die Telegram-ID des Versenders zur Verknüpfung mit dem Vereinsflieger-Konto.
 
     /credits
-Zeige allgemeine Informationen zu **TeleFly** sowie die Copyrighthinweise
+Zeige allgemeine Informationen zu **TeleFly** und die obligatorischen Copyrighthinweise.
 
     /version
 Zeige die installierte Version der **TeleFly**-Instanz.
@@ -61,7 +61,7 @@ _Weitere Feature-Requests kannst du mir gerne zukommen lassen! Mitarbeiten ist n
 Da unsere Server-Applikation keine komplexen Berechnungen anstellt und der Nutzerkreis jeweils auf einen Verein beschränkt ist, sollte der Betrieb auch auf einem Raspberry Pi problemlos möglich sein (getestet habe ich das allerdings noch nicht).
 
 ### Node.js, npm und git installieren
-Zunächst installieren wir Node.js und den zugehörigen Paketmanager npm.
+Zunächst installieren wir Node.js, den zugehörigen Paketmanager npm und die Versionsverwaltung git.
 #### Windows und MacOS
 Für Windows und MacOS kann der entsprechende Installer für Node.js hier heruntergeladen werden:
 
@@ -142,7 +142,8 @@ Mit dem nachfolgenden Befehl werden alle für **TeleFly** benötigten npm-Pakete
 Damit wäre die Installation geschafft! Jetzt fehlt nur noch die Konfiguration, dann kann es schon losgehen.
 
 ## Konfiguration
-Um **TeleFly** verwenden zu können, muss es nun noch für deinen Verein konfiguriert werden. Dazu öffnest du die Datei **config.json** Verwende Editor (Windows), notepad++, Visual Studio Code, Atom oder ähnlines **nicht WordPad / Word (Windows), Pages / TextEdit (MacOS)!** Diese Texteditoren managen die Datei und machen diese dadurch für **TeleFly unlesbar!**
+Um **TeleFly** verwenden zu können, muss es nun noch für deinen Verein konfiguriert werden. Dazu öffnest du die Datei **config.json**.
+Verwende Editor (Windows), notepad++, Visual Studio Code, Atom oder ähnlines **nicht WordPad / Word (Windows), Pages / TextEdit (MacOS)!** Diese Texteditoren managen die Datei und machen diese dadurch für **TeleFly unlesbar!**
 
 Die Konfiguration sieht folgendermaßen aus:
 
@@ -154,16 +155,16 @@ Die Konfiguration sieht folgendermaßen aus:
     "cid": "123",
     "verein": "XXXX"
 ### "telegram" - Mit dem Botfather chatten
-![Der Telegram-Botfather](https://core.telegram.org/file/811140763/1/PihKNbjT8UE/03b57814e13713da37)
+![Der Telegram-Botfather - Quelle: https://core.telegram.org/bots](https://core.telegram.org/file/811140763/1/PihKNbjT8UE/03b57814e13713da37)
 
 In das Konfigurationsfeld **"telegram"** kommt der sogenannte API-Token für den Telegram-Bot, den wir nun folgendermaßen erstellen:
 - **Wichtig!** Führe alle folgenden Schritte von dem Telegram-Konto aus durch, dass später auch als Adminkonto für den Bot sein soll (Benutzerverwaltung, Push-Nachrichten an alle Nutzer, manuelles verschicken der Flugbucheinträge usw.).
-- Öffne die Telegram-App auf einem beliebigen Gerät (PC, Tablet, Smartphone), tippe auf die **kleine Lupe** und suche nach _@botfather_. Tippt auf das Konto mit dem kleinen Bot-Symbol vor dem Namen.
-- Drücke unten im Chat auf **Starten**. Jetzt zeigt Dir der Botfather alle bei ihm verfügbaren Befehle an. Um einen Telegram-Bot zu erstellen, gibst du einfach **/newbot** ein und verschickst die Nachricht in den Chat, alternativ kannst du auch einfach auf den verlinkten Befehl in der Auflistung klicken.
+- Öffne die Telegram-App auf einem beliebigen Gerät (PC, Tablet, Smartphone), tippe auf die **kleine Lupe** und suche nach _@botfather_. Tippe auf das Konto mit dem kleinen Bot-Symbol vor dem Namen.
+- Drücke unten im Chat auf **Starten**. Jetzt zeigt Dir der Botfather alle bei ihm verfügbaren Befehle an. Um einen Telegram-Bot zu erstellen, gibst du einfach `/newbot` ein und verschickst die Nachricht in den Chat, alternativ kannst du auch einfach auf den verlinkten Befehl in der Auflistung klicken.
 - Wähle einen Namen für deinen Bot. Zum Beispiel: MeinVereinskürzel-TeleFly
 - Wähle einen Kontonamen für deinen Bot, dieser muss einmalig sein und mit "bot" enden. Zum Beispiel: meinvereinskuerzel_bot
 
-Jetzt bekommst Du einen langen Token angezeigt - kopiere ihn in das Feld **"telegram"** in der **config.json** zwischen die Anführungszeichen. Achte darauf, dass sich weder am Anfang, noch am Ende des Tokens Leerzeichen vor / hinter dem Anführungszeichen einschleichen! Bewahre diesen Token sicher auf! Jeder, der diesen Token besitzt, kann deinen Bot kontrollieren!
+Jetzt bekommst Du einen langen Token angezeigt - kopiere ihn in das Feld **"telegram"=""** in der **config.json** zwischen die Anführungszeichen. Achte darauf, dass sich weder am Anfang, noch am Ende des Tokens Leerzeichen vor / hinter dem Anführungszeichen einschleichen! Bewahre diesen Token sicher auf! Jeder, der diesen Token besitzt, kann deinen Bot kontrollieren!
 Um den Vereinsmitgliedern die Bedienung des Bots zu erleichtern, wollen wir nun noch die verfügbaren Befehle einpflegen:
 
 Sende dem Botfather eine Nachricht mit `/setcommands`.
@@ -176,7 +177,7 @@ Gegebenenfalls musst du nun noch den Bot auswählen, für den du die Befehle ein
     help - Zeige die Hilfe
     id - Verknüpfe mein Vereinsflieger-Konto
 
-Wenn du magst, kannst du mit `/setuserpic` noch ein Profilbild für den Bot einstellen. Wenn du kein Bild mit deinem Vereinslogo parat hast, nimm doch einfach das [TeleFly-Logo](https://wichmann.dev/TeleFly-Logo.png).
+Wenn du magst, kannst du mit `/setuserpic` noch ein Profilbild für den Bot einstellen. Wenn du kein Bild mit deinem Vereinslogo parat hast, nimm doch einfach das [TeleFly-Logo](https://wichmann.dev/telefly-resources/telefly-logo-full.png).
 
 Außerdem ist eine Botbeschreibung sinvoll, die deinen Benutzern bei der ersten Verwendung des Bots oberhalb des Startknopfes angezeigt wird. Eine Beschreibung kannst du mit `/setdescription` festlegen. Hier ist ein Beispiel, dass duch auch einfach übernehmen kannst:
 
@@ -196,24 +197,24 @@ Vom Bot gibt es noch keine Reaktion - wir haben ihn ja auch noch gar nicht gesta
 
 Drücke unten im Chat auf **Starten**. 
 
-Um deine Telegram-ID zu erimtteln, gibst du einfach **/getid** ein und verschickst die Nachricht in den Chat, alternativ kannst du auch einfach auf den verlinkten Befehl in der Auflistung klicken.
+Um deine Telegram-ID zu erimtteln, gibst du einfach `/getid` ein und verschickst die Nachricht in den Chat, alternativ kannst du auch einfach auf den verlinkten Befehl in der Auflistung klicken.
 
-Der Bot schickt dir jetzt eine Nummer zurück, diese Nummer ist deine eindeutige Telegram-ID, kopiere sie in das Feld **"tg_adminid"** in der **config.json** zwischen die Anführungszeichen. Achte wieder darauf, dass sich keine Leerzeichen einschleichen.
+Der Bot schickt dir jetzt eine Nummer zurück, diese Nummer ist deine eindeutige Telegram-ID, kopiere sie in das Feld **"tg_adminid"=""** in der **config.json** zwischen die Anführungszeichen. Achte wieder darauf, dass sich keine Leerzeichen einschleichen.
 
 ### "appkey" - Vereins-API-Schlüssel von vereinsflieger.de
 Um auf die Daten deines Vereins bei vereinsflieger.de zugreifen zu können, benötigst du einen vereinsspezifischen API-Key vom Vereinsflieger-Support. Schreibe dafür eine kurze E-Mail und frage nach den **API-Key** für deinen Verein. Der Support antwortet in der Regel sehr schnell, daher musst du sicher nicht lange warten.
-Sobald du den **API-Key** erhalten hast, kopieren ihn in das Feld **"appkey"** in der **config.json** zwischen die Anführungszeichen (ohne Leerzeichen vorne oder hinten!).
+Sobald du den **API-Key** erhalten hast, kopieren ihn in das Feld **"appkey"=""** in der **config.json** zwischen die Anführungszeichen (ohne Leerzeichen vorne oder hinten!).
 
 ### "username" und "password" 
-Hier trägst du das Vereinsflieger-Konto ein, über das der Bot das Hauptflugbuch sowie die Benutzerdatenbank auslesen kann. Im Idealfall erstellst du dafür einen eigenen Vereinsflieger-Account. Achte darauf, dass der Account die nötigten Rechte besitzt um Mitgliederliste und Hauptflugbuch auszulesen! Insbesondere wird zum Auslesen der Mitgliederliste das Recht "Mitgliederdaten bearbeiten" benötigt.
+Hier trägst du das Vereinsflieger-Konto ein, über das der Bot das Hauptflugbuch sowie die Benutzerdatenbank auslesen kann. Im Idealfall erstellst du dafür einen eigenen Vereinsflieger-Account. Achte darauf, dass der Account die nötigten Rechte besitzt um Mitgliederliste und Hauptflugbuch auszulesen! Insbesondere wird zum Auslesen der Mitgliederliste das Recht _"Mitgliederdaten bearbeiten"_ benötigt.
 
 **Datemschutzhinweis:** Benutzername und Passwort des in der **config.json** hinterlegten Vereinsflieger-Accounts werden nur dort dauerhaft gespeichert. Vor der verschlüsselten Übermittlung an die Vereinsflieger-Schnittstelle (HTTPS) wird das Passwort zusätzlich gehasht.
-Weiterhin werden nur von den beim Bot registrierten Benutzern der Vorname, Nachname, die Vereinsflieger Benutzernummer (UID) sowie die Telegram-ID in der Datei **userlist.json** gespeichert. Die genaue Art und Weise, wie sensible Daten durch den Bot verarbeitet werden, kannst du dir im Code bei **GitHub** auch anschauen!
+Weiterhin werden nur von den beim Bot registrierten Benutzern der Vorname, Nachname, die Vereinsflieger Benutzernummer (UID) sowie die Telegram-ID in der Datei **userlist.json** gespeichert. Die genaue Art und Weise, wie die personenbezogenen Daten durch den Bot verarbeitet werden, kannst du dir im Code bei **GitHub** auch anschauen!
 **Ich übernehme keine Haftung für Datenlecks und die unerlaubte Kompromittierung personenbezogener Daten jeglicher Art!**
 Wähle ein sicheres Passwort für den Server, auf dem TeleFly läuft und konfiguriere möglichst keine zusätzlichen Portfreigaben!
 
 ### "cid" - Die Eindeutige Nummer deines Vereins bei vereinsflieger.de
-Die Eindeutige Nummer deines Vereins (CID) findest du bei Vereinsflieger unter "_Administration_ --> _Stammdaten_ --> _Verein_" rechts neben dem Kurznamen deines Vereins. Tippe **nur die Zahl** ohne Leerzeichen in das Feld **"cid"** in der **config.json** zwischen die Anführungszeichen.
+Die Eindeutige Nummer deines Vereins (CID) findest du bei Vereinsflieger unter "_Administration_ --> _Stammdaten_ --> _Verein_" rechts neben dem Kurznamen deines Vereins. Tippe **nur die Zahl** ohne Leerzeichen in das Feld **"cid"=""** in der **config.json** zwischen die Anführungszeichen.
 
 ### "verein" - Dein Vereinskürzel
 Hier trägst du den Namen deines Vereins, im Idealfall das Kürzel deines Vereins, zwischen den Anführungszeichen ein. Der Name wird in der Willkommensnachricht des Bots verwendet und hat keine Bedeutung für die Kommunikation mit Vereinsflieger.de.
@@ -280,12 +281,28 @@ Sende die Flugbucheinträge für den heutigen Tag manuell an alle Piloten, die g
 Suche in der Vereinsflieger-Mitgliederliste nach neuen Telegram-IDs. Standardmäßig wird diese Funktion täglich um Mitternacht und bei jeden `/confirm` Befehl ausgeführt.
 
 `/confirm telegramid`
-Bestätige, dass du die Telegram-ID, die du anstelle von _telegramid_ hinter den Befehl schreibst, bei Vereinsflieger hinterlegt hast. Der zugehörige Telegram-Nutzer wird installiert und die Mitgliederliste bei Vereinsflieger wird nach neuen Telegram-IDs durchsucht.
+Bestätige, dass du die Telegram-ID, die du anstelle von _telegramid_ hinter den Befehl schreibst, bei Vereinsflieger hinterlegt hast. Der zugehörige Telegram-Nutzer wird über seine "Freischaltung" informiert und die Mitgliederliste bei Vereinsflieger wird nach neuen Telegram-IDs durchsucht.
 Achte auf ein Leerzeichen zwischen Befehl und Telegram-ID!
 
 `/shout nachrichtentext`
 Sende eine Nachricht an alle verknüpften Vereinsmitglieder. Absätze und Markdown-Syntax sind möglich!
 Achte auf ein Leerzeichen zwischen Befehl und deiner Nachricht!
+
+## Updates
+
+Um **Telefly** nach der Veröffentlichung einer neuen Version wieder auf den neusten Stand zu bringen, führe die folgenden Schritte aus:
+
+- Erstelle eine Sicherung deiner **config.json** und (sofern modifiziert) auch eine Sicherung deiner **flighttypes.json**, kopiere die Dateien beispielsweise in ein anderes Verzeichnis
+
+- Navigiere im Terminal mit `cd` in das **TeleFly**-Verzeichnis und führe den Befehl `git pull https://github.com/nwmx/TeleFly.git` aus
+
+- Stelle die Sicherung deiner **config.json** sowie gegebenenfalls der **flighttypes.json** wieder her
+
+- Beende den **TeleFly**-Server mit `Strg + C` und starte ihn mit `node index.js` neu
+
+- Sende dem Bot den Befehl `/userList` und gegebenenfalls `/toggleUpdate`
+
+- Sende dem Bot den Befehl `/version` und überprüfe, dass sich die Versionsnummer aktualisiert hat.
 
 ## Credits
 **TeleFly**

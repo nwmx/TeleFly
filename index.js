@@ -456,7 +456,7 @@ function dayLog(data) {
         let flights = [];
         for (let u = 0; u < Object.keys(data).length - 1; u++) {
             if (flighttypes[data[u].ftid] == 'S - Schulflug' || flighttypes[data[u].ftid] == 'Ü - Auffrischungsschulung') {
-                if (data[u].uidpilot || data[u].uidattendant == user[i].uid) {
+                if (data[u].uidpilot == user[i].uid || data[u].uidattendant == user[i].uid) {
                     flights.push(data[u])
                 }
             } else if (data[u].uidpilot == user[i].uid) {

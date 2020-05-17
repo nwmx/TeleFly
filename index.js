@@ -508,7 +508,7 @@ schedule.scheduleJob('*/10 * * * *', function () {
     loginTest();
     console.log('Vereinsflieger: Prüfung auf Session timeout...')
 });
-schedule.scheduleJob('* 19 * * *', function () { //Send logbook entries to todays pilots
+schedule.scheduleJob('0 19 * * *', function () { //Send logbook entries to todays pilots
     if (!pushedDayLog) {
         getToday(null, 2);
     }

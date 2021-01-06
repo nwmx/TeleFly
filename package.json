@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nwmx/TeleFly#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "colors": "^1.4.0",
     "fs": "0.0.1-security",
     "md5": "^2.2.1",
